@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { CheckCircle, ReceiptEuro, Clock, Activity, ShieldAlert, } from 'lucide-react';
+import { CheckCircle, ReceiptEuro, Clock, Activity, ShieldAlert, LogOut } from 'lucide-react';
 
 const Dashboard = ({ token, setActiveTab }) => {
   const [loading, setLoading] = useState(true);
@@ -12,6 +12,12 @@ const Dashboard = ({ token, setActiveTab }) => {
   // --- ADMIN CHECK ---
   const userEmail = localStorage.getItem('userEmail')?.toLowerCase().trim();
   const isAdmin = userEmail === 'admin@poco.com';
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userEmail');
+    window.location.reload();
+  };
 
   useEffect(() => {
     const fetchEverything = async () => {
@@ -66,9 +72,18 @@ const Dashboard = ({ token, setActiveTab }) => {
 
   return (
     <div className="max-w-6xl mx-auto">
-      <div className="mb-10">
-        <h2 className="text-3xl font-black text-white mb-2">Command Center</h2>
-        <p className="text-slate-400">Welcome back. Here is your overview for this month.</p>
+      <div className="mb-10 flex justify-between items-start">
+        <div>
+          <h2 className="text-3xl font-black text-white mb-2">Command Center</h2>
+          <p className="text-slate-400">Welcome back. Here is your overview for this month.</p>
+        </div>
+        <button
+          onClick={handleLogout}
+          className="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 p-3 rounded-2xl transition flex items-center gap-2"
+        >
+          <LogOut size={20} />
+          <span className="font-bold text-sm hidden sm:block">Sign Out</span>
+        </button>
       </div>
 
       {/* --- ADMIN ONLY --- */}
