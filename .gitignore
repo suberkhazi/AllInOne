@@ -9,7 +9,6 @@ build/
 
 # Mobile (Expo)
 .expo/
-*.apk
 *.aab
 *.jks
 *.p8
@@ -23,4 +22,3 @@ Ignore these in ANY folder
 **/.expo/
 **/.env
 **/dist/
-**/*.apk
