@@ -7,7 +7,7 @@ Built as a **Monorepo**, this project houses a Web Dashboard, a React Native Mob
 ---
 
 ## 🔗 Live Links
-* **Web Dashboard:** [[Link](https://all-in-2rm9ux3v3-suberkhazis-projects.vercel.app/)]
+* **Web Dashboard:** [[Link](https://all-in-one-sage.vercel.app/)]
 * **Mobile App (.apk):** [📥 Download the Android APK Here] (https://github.com/suberkhazi/AllInOne/releases/download/v1.0.0/All.In.One.apk)
 
 ## 📱 Installation Note (Android)
